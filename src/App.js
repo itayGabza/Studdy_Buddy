@@ -14,6 +14,8 @@ import Person from './Person';
 import Filters from './Filters';
 import NewRequest from './NewRequest';
 import Forming from './Forming';
+import Learn from './Learn';
+import ContactUs from './ContactUs';
 
 //import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,18 +24,12 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import './ForumCard.css';
 import './jumbo.css';
 
-/* const Majors = ["IEM", "Computer Science", "Biology"]
-  const IEM = ["calculus", "Algebra", "IntroJava", "Economics", "physicis1B"];
-  const CompScience = ["calculus", "Algebra", "IntroScience", "Logic", "Combi"];
-  const Biology = ["Anatomy", "The cell", "Chemistry", "Calculus"]; */
-
 const getAttributeName = (e, attributeName) => {
   return e.target.getAttribute(attributeName) || e.currentTarget.getAttribute(attributeName);
 }
 
 class Degree {
   constructor(name, courses) {
-    // this.ref = "IEM" + (number + 1);
     this.name = name;
     this.courses = courses;
   }
@@ -53,12 +49,12 @@ export class FormCard {
 
 
 const degreesData = [
-  new Degree("IEM1", ['Economy1', 'Economy2']),
-  new Degree("CS", ['Math-For-Cs', 'Linear Algebra', 'Linear Algebra2']),
-  new Degree("Physics", ['Math-For-Physicens', 'Linear Algebra ', 'Linear Algebra 2'])
+  new Degree("Industrial Engineering and Management", ['Culculus', 'Economics','Linear Regression', 'Object Oriented Programming','Statistics' ]),
+  new Degree("Computer Science", ['Intro to CS', 'Linear Algebra', 'Linear Algebra2','Culculus2', 'SPL' ]),
+  new Degree("Physics", ['Math-For-Physicens', 'Physics1 ', 'Physics2','Thermodynamics', 'Statics' ])
 ];
 
-//const degressList = ["IEM1", "IEM2", "IEM3", "IEM4"]
+
 
 
 const formCardsData = [
@@ -99,10 +95,7 @@ const App = () => {
       setSelectedDegree(selectedDegree);
       setSelectedCourse(selectedDegree.courses[0]);
 
-      // secondArray.title = secondArray.name;
-      // setSecondArray(secondArray);
-      // selectedDegree.title = name;
-      // setSelectedDegree(selectedDegree);
+
     }
   };
 
@@ -110,7 +103,7 @@ const App = () => {
     <ForumCard {...formCard} />
   );
 
- 
+
 
 
 
@@ -137,7 +130,7 @@ const App = () => {
               onCourseSelectClick={handleCourseSelectClick}
             />
 
-            <h4> select filters:</h4>
+            <h4> Select Filters:</h4>
             <div class="bigjumbo">
               <Jumbotron >
 
@@ -148,32 +141,28 @@ const App = () => {
                 </p>
               </Jumbotron>
             </div>
-            <h4> results -
-               number- found:</h4>
-
-            {/* <ForumCard title="Home Assignment 3" objective="Home Work" gender="Male" level="good" location="zoom" studyingTime ="Morning" groupSize="5+"/>
-            <ForumCard />
-            <ForumCard />
-            <ForumCard /> */}
-
+            <h4> Results
+                Found:</h4>
             {compsToRender}
-            {compsToRender}
-
-
           </Route>
           <Route path="/newRequest">
             <Home />
             <NewRequest addToList={forumCard => {
               setForumCards([...forumCards, forumCard]);
-              // document.href = '/';
             }} />
 
           </Route>
-
+          <Route path="/Learn">
+            <Home />
+            <Learn />
+          </Route>
+          <Route path="/ContactUs">
+            <Home />
+            <ContactUs />
+          </Route>
           <Route path="/">
             <Home />
             <Welcoming />
-            <Person name="IDO" hobbies="Dancing" />
           </Route>
         </Switch>
       </div>

@@ -5,13 +5,14 @@ import Home from './Home';
 
 export default function Forming() {
   const history = useHistory();
+  
 	const navToNewReq = () => {
     history.push('/Newrequest');
   }
 	return (
 		<>
 			<Home />
-			<Button variant="success" style={{ float: "right" }} onClick={navToNewReq}>צור בקשה חדשה</Button>{' '}
+			<Button variant="success" style={{ float: "right" }} onClick={navToNewReq}>Create New Request</Button>{' '}
 		</>
 	)
 }

@@ -11,7 +11,7 @@ import './App.css';
 function ContactUs() {
     return (
         <div>
-            <img className="im" src={require('./contact.jpeg')}/>
+            <img style={{position: "absolute", left: "18%"}}className="im" src={require('./contact.jpeg')}/>
         </div>
 
     )

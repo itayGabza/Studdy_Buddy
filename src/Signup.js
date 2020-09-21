@@ -30,7 +30,7 @@ function Signup(){
                     <Form.Label >Password</Form.Label>
                     <Form.Control ID="2" style={{textAlign:"center"}} type="password" placeholder="Password" />
                 </Form.Group>
-                <Button onClick={varify()} variant="primary" type="submit">
+                <Button href="/" onClick={varify()} variant="primary" type="submit">
                     Signup
                 </Button>
             </Form>

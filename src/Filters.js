@@ -136,7 +136,7 @@ export default function CheckboxLabels() {
           <div class="formgroup">
             <FormControlLabel
               control={<GreenCheckbox checked={state.checkedG6} onChange={handleChange} name="checkedG6" />}
-              label="Evning"
+              label="Evening"
             />
           </div>
         </FormGroup>
